@@ -19,7 +19,7 @@ end
 puts "🖥️ Creating posts..."
 14.times do
   Post.create(
-    content: Faker::Twitter.status, 
+    content: Faker::Games::Witcher.quote, 
     like: rand(1-15), 
     user_id: User.all.sample.id
   )
