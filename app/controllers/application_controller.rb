@@ -13,5 +13,6 @@ end
 
 # rails g resource Post content like:integer 
 
-# rails g resource Comment body post:belongs_to user: belongs_to comment:belongs_to
+# rails g resource Comment body post:belongs_to user:belongs_to comment:belongs_to
 
+rails g resource Follow follower:belongs_to followed:belongs_to

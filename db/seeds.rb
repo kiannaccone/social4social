@@ -35,7 +35,7 @@ puts "💃 Seeding Comments..."
 
     10.times do
         Comment.create(body: )
-
+    end
 # t.string :body
 # t.belongs_to :post, null: false, foreign_key: true
 # t.string :user
