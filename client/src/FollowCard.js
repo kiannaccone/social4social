@@ -1,9 +1,10 @@
 
-function FollowCard(){
+function FollowCard({follow: {follower_id, followed_id}}){
 
     return(
         <div>
-            <h3>I am the FollowCard</h3>
+            <p>{follower_id}</p>
+            <p>{followed_id}</p>
         </div>
     )
 }

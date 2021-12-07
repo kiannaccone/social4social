@@ -32,4 +32,5 @@ private
   def post_params
       params.permit(:content)
   end
+  
 end
