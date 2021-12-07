@@ -15,6 +15,7 @@ function App() {
   const [allUsers, setAllUsers] = useState([])
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
+  const [search, setSearch] = useState("")
   
   useEffect(()=> { 
     fetch('/users')
@@ -34,6 +35,11 @@ function App() {
     .then((allFollows)=> setAllFollows(allFollows))
   },[])
 
+  const filterUsers = allUsers.filter(users => {
+    return (
+      users.username.toLowerCase().includes(search.toLowerCase())
+    )
+  })
 
   return (
     <div>
@@ -59,7 +65,7 @@ function App() {
         <Logout />
       </Route>
       <Route exact path="/search">
-        <Search />
+        <Search search={search} setSearch={setSearch} allUsers = {filterUsers}/>
       </Route>
     </Switch>
     </div>
