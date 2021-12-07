@@ -1,10 +1,14 @@
-import UserContainer from "./UserContainer";
+import BioEdit from './BioEdit'
+import ProfileCard from './ProfileCard';
 
-function Profile(){
+function Profile({allUsers}){
+
+const userCards = allUsers.map((user) => <ProfileCard key={user.id} user={user} />);
 
     return(
         <div>
-            <UserContainer />
+            {userCards}
+            <BioEdit/>
         </div>
     )
 }
