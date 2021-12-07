@@ -1,13 +1,21 @@
 import UserContainer from "./UserContainer"
 
-function Search(){
+function Search({search, setSearch}){
 
     return(
-        <div>
-            <h3>I am the Search</h3>
-            <UserContainer />
+        <div className="search">
+        <label htmlFor="search">Search Users:</label>
+          <input
+            className = "searchTerm"
+            type="text"
+            id="search"
+            placeholder="Search Users..."
+            value = {search}
+            onChange={(e) => setSearch(e.target.value)}
+        />
+        <UserContainer />
         </div>
-    )
+      );
 }
 
-export default Search;
+export default Search; 
