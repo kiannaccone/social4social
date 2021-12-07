@@ -25,13 +25,13 @@ function App() {
     fetch('/posts')
     .then((resp)=> resp.json())
     .then((allPost) => setAllPost(allPost))
-  })
+  },[])
 
   useEffect(() => {
     fetch('/follows')
     .then((resp)=> resp.json())
     .then((allFollows)=> setAllFollows(allFollows))
-  })
+  },[])
 
   return (
    <div>
