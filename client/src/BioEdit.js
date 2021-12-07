@@ -2,7 +2,7 @@
 function BioEdit(){
 
     return(
-        <div>
+        <div id="bio-edit">
             
         </div>
     )

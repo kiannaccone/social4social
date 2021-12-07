@@ -4,7 +4,7 @@ function Post({allPost}){
 
     return(
         <div>
-           <PostContainer allPost={allPost}/> 
+            <PostContainer allPost={allPost}/> 
         </div>
     )
 }
