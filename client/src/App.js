@@ -6,6 +6,7 @@ import Logout from './Logout';
 import NavBar from './NavBar';
 import Header from './Header';
 import Search from './Search';
+import LandingPage from './LandingPage';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -38,19 +39,22 @@ function App() {
     <Header />
      <NavBar />
       <Switch>
-        <Route path="/profile">
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+        <Route exact path="/profile">
           <Profile />
         </Route>
-        <Route path="/post">
+        <Route exact path="/post">
           <Post allPost={allPost}/>
         </Route>
-        <Route path="/follows">
+        <Route exact path="/follows">
           <FollowContainer allFollows={allFollows}/>
         </Route>
-        <Route path="/logout">
+        <Route exact path="/logout">
           <Logout />
         </Route>
-        <Route path="/search">
+        <Route exact path="/search">
           <Search />
         </Route>
       </Switch>
