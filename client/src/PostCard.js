@@ -1,9 +1,11 @@
 
-function PostCard(){
+function PostCard({post: {content, like, user_id}}){
 
     return(
         <div>
-            <h3>I am the PostCard</h3>
+            <p>{content}</p>
+            <p>{like}</p>
+            <p>{user_id}</p>
         </div>
     )
 }

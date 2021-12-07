@@ -1,10 +1,12 @@
 import PostCard from "./PostCard";
 
-function PostContainer(){
+function PostContainer({allPost}){
+
+    const postData = allPost.map((post) => <PostCard key={post.id} post={post}/>)
 
     return(
         <div>
-            <PostCard />
+            {postData}
         </div>
     )
 }

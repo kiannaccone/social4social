@@ -6,9 +6,33 @@ import Logout from './Logout';
 import NavBar from './NavBar';
 import Header from './Header';
 import Search from './Search';
-// import './App.css';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
+  
+  // const [user, setUser] = useState([])
+  const [allPost, setAllPost] = useState([])
+  const [allFollows, setAllFollows] =useState([])
+  
+  // useEffect(()=> { 
+  //   fetch('')
+  //   .then((resp) => resp.json())
+  //   .then((allUsers) => setUser(allUsers))
+  // },[])
+
+  useEffect(()=> {
+    fetch('/posts')
+    .then((resp)=> resp.json())
+    .then((allPost) => setAllPost(allPost))
+  })
+
+  useEffect(() => {
+    fetch('/follows')
+    .then((resp)=> resp.json())
+    .then((allFollows)=> setAllFollows(allFollows))
+  })
+
   return (
    <div>
     <Header />
@@ -18,10 +42,10 @@ function App() {
           <Profile />
         </Route>
         <Route path="/post">
-          <Post />
+          <Post allPost={allPost}/>
         </Route>
         <Route path="/follows">
-          <FollowContainer />
+          <FollowContainer allFollows={allFollows}/>
         </Route>
         <Route path="/logout">
           <Logout />

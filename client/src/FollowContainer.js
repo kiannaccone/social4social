@@ -1,10 +1,11 @@
 import FollowCard from "./FollowCard";
 
-function FollowContainer(){
+function FollowContainer(allFollows){
 
+    let follows = allFollows.map((follow) => <FollowCard key={follow.id} follow={follow}/> )
     return(
         <div>
-           <FollowCard /> 
+            {follows}
         </div>
     )
 }
