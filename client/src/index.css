@@ -16,3 +16,15 @@ code {
   display: flex;
   justify-content: center;
 }
+
+#postcard{
+  display: table-row;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#followcard{
+  display: table-row;
+  justify-content: center;
+  padding: 5rem;
+}

@@ -2,7 +2,7 @@
 function PostCard({post: {content, like, user_id}}){
 
     return(
-        <div>
+        <div id="postcard">
             <p>{content}</p>
             <p>{like}</p>
             <p>{user_id}</p>
