@@ -1,15 +1,78 @@
+import {useState} from 'react'
 
-function SignUp(){
+function SignUp({setAllUsers}){
 
+    const [createInfo, setCreateInfo] = useState({
+        email: '',
+        username: '',
+        password: '',
+        bio: '',
+        image: ''
+    })
+
+    function handleSubmit(e){
+        e.preventDefault()
+        const userSignup = {
+            email: createInfo.email,
+            username: createInfo.username,
+            password: createInfo.password,
+            bio: createInfo.bio,
+            image: createInfo.image
+        }
+        fetch('/signup',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify(userSignup)
+        })
+        .then((resp)=> resp.json())
+        .then((newUser) => {
+            setAllUsers((currentUsers) => [newUser,...currentUsers])
+            setCreateInfo({
+                email: '',
+                username: '',
+                password: '',
+                bio: '',
+                image: ''
+            })
+        })
+        
+    }
+
+    function handleChange(e){
+        setCreateInfo((currentUserInfo) => ({
+            ...currentUserInfo,
+            [e.target.name]: e.target.value
+        }))
+    }
+        
     return(
         <div>
             <p>Dont have an account? Create a free account</p>
-            <form>
-                <input type='text' placeholder='email'/>
-                <input type='text' placeholder='username'/>
-                <input type='text' placeholder='password'/>
-                <input type='text' placeholder='bio'/>
-                <input type='text' placeholder='photo'/>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    <h4>Email</h4>
+                    <input onChange={handleChange} type='text' name='email' value={createInfo.email}placeholder='email'/>
+                </label>
+                <label>
+                    <h4>Username</h4>
+                     <input onChange={handleChange} name='username' type='text' value={createInfo.username} placeholder='username'/>
+                </label>
+                <label>
+                    <h4>Password</h4>
+                      <input onChange={handleChange} name='password' type='text' value={createInfo.password}    placeholder='password'/>
+                </label>
+                <label>
+                    <h4>Bio</h4>
+                      <input onChange={handleChange} name='bio' type='text' value={createInfo.bio}  placeholder='bio'/>
+                </label>
+                <label>
+                    <h4>Image</h4>
+                      <input onChange={handleChange} name='image' type='text' value={createInfo.image} placeholder='image'/>
+                </label>
+                <button>SignUp</button>
             </form>
         </div>
     )
