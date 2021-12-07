@@ -41,7 +41,7 @@ function App() {
     <NavBar />
     <Switch>
       <Route exact path="/">
-        <LandingPage />
+        <LandingPage setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/home">
         <Home />

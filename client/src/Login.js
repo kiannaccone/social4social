@@ -1,12 +1,54 @@
+import {useState} from 'react'
 
 function Login(){
+
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    })
+
+    function handleSubmit(e){
+        e.preventDefault()
+       const registeredUser= {
+            username: user.username,
+            password: user.password
+        }
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify(registeredUser)
+        })
+        .then((resp) => resp.json())
+        .then((user)=> console.log(user))
+    }
+
+    function handleChange(e){
+        setUser((currentInfo)=> ({
+            ...currentInfo,
+            [e.target.name]: e.target.value
+        }))
+    }
+
 
     return(
         <div>
             <p>Have an account? Sign in!</p>
-            <form>
-                <input type='text' placeholder='username'/>
-                <input type='text' placeholder='password'/>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    <h4>Username</h4>
+                    <input onChange={handleChange}
+                     value={user.username} type='text' placeholder='username'
+                     name="username"/>
+                </label>
+                <label>
+                    <h4>Password</h4>
+                    <input onChange={handleChange} value={user.password} type='text' placeholder='password'
+                    name="password"/>
+                </label>
+                <button>Login</button>
             </form>
         </div>
     )

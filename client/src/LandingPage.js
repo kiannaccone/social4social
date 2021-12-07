@@ -1,14 +1,14 @@
 import Login from "./Login"
 import SignUp from "./SignUp"
 
-function LandingPage(){
+function LandingPage({setAllUsers}){
 
     return(
 
         <div>
             <h4>Howdy!</h4>
             <Login />
-            <SignUp />
+            <SignUp setAllUsers={setAllUsers}/>
         </div>
     )
 }
