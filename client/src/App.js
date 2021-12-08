@@ -1,55 +1,60 @@
 import {Route, Switch} from 'react-router-dom';
-import Profile from './Profile';
-import Post from './Post';
-import FollowContainer from './FollowContainer';
-import Logout from './Logout';
-import NavBar from './NavBar';
+// import Profile from './Profile';
+// import Post from './Post';
+// import FollowContainer from './FollowContainer';
+// import Logout from './Logout';
+// import NavBar from './NavBar';
 import Header from './Header';
-import Home from './Home';
-import Search from './Search';
+// import Home from './Home';
+// import Search from './Search';
 import LandingPage from './LandingPage';
+import Main from './Main';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
 function App() {
-  const [allUsers, setAllUsers] = useState([])
-  const [allPost, setAllPost] = useState([])
-  const [allFollows, setAllFollows] =useState([])
-  const [search, setSearch] = useState("")
+  // const [allUsers, setAllUsers] = useState([])
+  // const [allPost, setAllPost] = useState([])
+  // const [allFollows, setAllFollows] =useState([])
+  // const [search, setSearch] = useState("")
+  const [user, setUser] = useState(null)
+
   
-  useEffect(()=> { 
-    fetch('/users')
-    .then((resp) => resp.json())
-    .then((allUsers) => setAllUsers(allUsers))
-  }, [])
+  // useEffect(()=> { 
+  //   fetch('/users')
+  //   .then((resp) => resp.json())
+  //   .then((allUsers) => setAllUsers(allUsers))
+  // }, [])
 
-  useEffect(()=> {
-    fetch('/posts')
-    .then((resp)=> resp.json())
-    .then((allPost) => setAllPost(allPost))
-  },[])
+  // useEffect(()=> {
+  //   fetch('/posts')
+  //   .then((resp)=> resp.json())
+  //   .then((allPost) => setAllPost(allPost))
+  // },[])
 
-  useEffect(() => {
-    fetch('/follows')
-    .then((resp)=> resp.json())
-    .then((allFollows)=> setAllFollows(allFollows))
-  },[])
+  // useEffect(() => {
+  //   fetch('/follows')
+  //   .then((resp)=> resp.json())
+  //   .then((allFollows)=> setAllFollows(allFollows))
+  // },[])
 
-  const filterUsers = allUsers.filter(users => {
-    return (
-      users.username.toLowerCase().includes(search.toLowerCase())
-    )
-  })
+  if (!user) return <LandingPage onLogin={setUser} />
+
+  // const filterUsers = allUsers.filter(users => {
+  //   return (
+  //     users.username.toLowerCase().includes(search.toLowerCase())
+  //   )
+  // })
 
   return (
     <div>
     <Header/>
-    <NavBar />
-    <Switch>
-      <Route exact path="/">
-        <LandingPage setAllUsers={setAllUsers}/>
-      </Route>
-      <Route exact path="/home">
+    {/* <NavBar /> */}
+    {/* <Switch>
+      <Route exact path="/"> */}
+        <Main />
+      {/* </Route> */}
+      {/* <Route exact path="/home">
         <Home />
       </Route>
       <Route exact path="/profile">
@@ -66,8 +71,8 @@ function App() {
       </Route>
       <Route exact path="/search">
         <Search search={search} setSearch={setSearch} allUsers = {filterUsers}/>
-      </Route>
-    </Switch>
+      </Route> */}
+    {/* </Switch> */}
     </div>
   )
 }

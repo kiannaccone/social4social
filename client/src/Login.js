@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function Login(){
+function Login({onLogin}){
 
     const [user, setUser] = useState({
         username: '',
@@ -21,9 +21,18 @@ function Login(){
             },
             body: JSON.stringify(registeredUser)
         })
-        .then((resp) => resp.json())
-        .then((user)=> console.log(user))
+        // .then((resp) => resp.json())
+        // .then((user)=> console.log(user))
+        .then((resp) => {
+            if (resp.ok) {
+              resp.json().then((user) => onLogin(user));
+            } else {
+            //   resp.json().then((data) => setErrors(data.errors));
+            }
+        });
     }
+
+
 
     function handleChange(e){
         setUser((currentInfo)=> ({
