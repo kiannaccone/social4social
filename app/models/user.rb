@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
     has_secure_password
     
     has_many :comments
@@ -10,4 +9,10 @@ class User < ApplicationRecord
 
     has_many :following_user, foreign_key: :followed_id, class_name: "Follow"
     has_many :followers, through: :following_user
+
+    validates :username, presence: true, uniqueness: true
+    validates :email, presence: true, uniqueness: true
+    validates :password_digest, presence: true, length: { in: 4..24 }
+    validates :bio, presence: true, length: { maximum: 100 }
+    validates :image, presence: true
 end
