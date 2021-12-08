@@ -1,9 +1,17 @@
 
-function UserCard(){
+function UserCard({followUser, user : {image, username}}){
+
+    console.log(followUser)
+
+    function handleFollow () {
+        
+    }
 
     return(
         <div>
-            <h3>I am the UserCard</h3>
+            <img src= {image} alt = {username} />
+            <h4>{username}</h4>
+            <button onClick={()=> handleFollow()}>{followUser ? "Follow" : "Following"}</button>
         </div>
     )
 }
