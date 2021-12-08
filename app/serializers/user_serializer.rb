@@ -3,6 +3,4 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :following_user
 
-  
-  
 end

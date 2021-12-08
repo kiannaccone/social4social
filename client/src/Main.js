@@ -60,7 +60,7 @@ function Main({onLogout, user}) {
         <FollowContainer allFollows={allFollows}/>
       </Route>
       <Route exact path="/search">
-        <Search search={search} setSearch={setSearch} allUsers = {filterUsers}/>
+        <Search search={search} setSearch={setSearch} allUsers = {filterUsers} user={user}/>
       </Route>
     </Switch>
     </div>
