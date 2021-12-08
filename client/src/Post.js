@@ -1,10 +1,12 @@
 import PostContainer from "./PostContainer";
 
-function Post({allPost}){
+function Post({allPost, currentUser}){
+    // console.log({currentUser})
+    
 
     return(
         <div>
-            <PostContainer allPost={allPost}/> 
+            <PostContainer allPost={allPost} currentUser={currentUser}/> 
         </div>
     )
 }
