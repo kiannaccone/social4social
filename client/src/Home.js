@@ -1,10 +1,10 @@
 
 
-function Home(){
+function Home({user}){
 
     return(
         <div>
-        
+            
         </div>
     )
 }

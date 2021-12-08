@@ -1,7 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
-function NavBar(){
+function NavBar({onLogout}){
+
+    function handleLogOut(){
+        fetch('/logout',{
+            method: 'DELETE',
+        }).then((resp) => {
+            if (resp.ok) {
+                onLogout(null)
+            }
+        })
+    }
 
     return(
         <div>
@@ -20,9 +30,9 @@ function NavBar(){
             <NavLink to='/post'>
                 Post
             </NavLink>
-            <NavLink to="/logout">
+            <button as={Link} to='/' onClick={handleLogOut}>
                 Logout
-            </NavLink>
+            </button>
         </div>
     )
 }
