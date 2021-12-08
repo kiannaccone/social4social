@@ -7,6 +7,8 @@ function UserCard({followUser, user : {image, username}}){
         
     }
 
+    
+
     return(
         <div>
             <img src= {image} alt = {username} />

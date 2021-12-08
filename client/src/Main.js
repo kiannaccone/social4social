@@ -38,6 +38,7 @@ function Main({onLogout, user}) {
       users.username.toLowerCase().includes(search.toLowerCase())
     )
   })
+  
 
   return (
     <div>
@@ -47,13 +48,13 @@ function Main({onLogout, user}) {
         <LandingPage setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/home">
-        <Home user={user}/>
+        <Home user={user} allPost={allPost}/>
       </Route>
       <Route exact path="/profile">
-        <Profile allUsers = {allUsers} />
+        <Profile allUsers = {allUsers} user={user} allPost={allPost}/>
       </Route>
       <Route exact path="/post">
-        <Post allPost={allPost}/>
+        <Post allPost={allPost} currentUser={user}/>
       </Route>
       <Route exact path="/follows">
         <FollowContainer allFollows={allFollows}/>

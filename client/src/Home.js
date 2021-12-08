@@ -1,10 +1,10 @@
+import PostContainer from './PostContainer'
 
-
-function Home({user}){
+function Home({user, allPost}){
 
     return(
         <div>
-            
+            <PostContainer allPost={allPost}/>
         </div>
     )
 }

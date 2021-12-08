@@ -1,13 +1,16 @@
 import BioEdit from './BioEdit'
 import ProfileCard from './ProfileCard';
+import PostContainer from './PostContainer'
 
-function Profile({allUsers}){
+function Profile({user, allPost}){
 
-const userCards = allUsers.map((user) => <ProfileCard key={user.id} user={user} />);
+
 
     return(
         <div>
-            {userCards}
+            
+            <ProfileCard user= {user}/>
+            <PostContainer allPost={allPost}/>
             <BioEdit/>
         </div>
     )
