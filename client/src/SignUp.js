@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function SignUp({setAllUsers}){
+function SignUp({onLogin}){
 
     const [createInfo, setCreateInfo] = useState({
         email: '',
@@ -27,17 +27,26 @@ function SignUp({setAllUsers}){
             },
             body: JSON.stringify(userSignup)
         })
-        .then((resp)=> resp.json())
-        .then((newUser) => {
-            setAllUsers((currentUsers) => [newUser,...currentUsers])
-            setCreateInfo({
-                email: '',
-                username: '',
-                password: '',
-                bio: '',
-                image: ''
+        // .then((resp)=> resp.json())
+        // .then((newUser) => {
+            .then((resp) => {
+                if (resp.ok) {
+                    resp.json().then((user) => onLogin(user));
+                } else {
+                    // handle errors
+                    // resp.json().then((data) => setErrors(data.errors))
+                }
             })
-        })
+            // {
+            // setAllUsers((currentUsers) => [newUser,...currentUsers])
+            // setCreateInfo({
+            //     email: '',
+            //     username: '',
+            //     password: '',
+            //     bio: '',
+            //     image: ''
+            // })
+            // }
         
     }
 
