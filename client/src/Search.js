@@ -1,6 +1,6 @@
 import UserContainer from "./UserContainer"
 
-function Search({search, setSearch}){
+function Search({search, setSearch, allUsers, user}){
 
     return(
         <div className="search">
@@ -13,7 +13,7 @@ function Search({search, setSearch}){
             value = {search}
             onChange={(e) => setSearch(e.target.value)}
         />
-        <UserContainer />
+        <UserContainer allUsers = {allUsers} followUser={user}/>
         </div>
       );
 }
