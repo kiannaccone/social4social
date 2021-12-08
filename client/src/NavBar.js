@@ -28,7 +28,7 @@ function NavBar({onLogout}){
                 Search
             </NavLink>
             <NavLink to='/post'>
-                Post
+                Create Post
             </NavLink>
             <button as={Link} to='/' onClick={handleLogOut}>
                 Logout
