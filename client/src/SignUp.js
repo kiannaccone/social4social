@@ -27,8 +27,6 @@ function SignUp({onLogin}){
             },
             body: JSON.stringify(userSignup)
         })
-        // .then((resp)=> resp.json())
-        // .then((newUser) => {
             .then((resp) => {
                 if (resp.ok) {
                     resp.json().then((user) => onLogin(user));
@@ -37,17 +35,6 @@ function SignUp({onLogin}){
                     // resp.json().then((data) => setErrors(data.errors))
                 }
             })
-            // {
-            // setAllUsers((currentUsers) => [newUser,...currentUsers])
-            // setCreateInfo({
-            //     email: '',
-            //     username: '',
-            //     password: '',
-            //     bio: '',
-            //     image: ''
-            // })
-            // }
-        
     }
 
     function handleChange(e){
