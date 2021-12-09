@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   
-  resources :follows
+  resources :follows, only: [:index, :create]
   resources :comments
   resources :posts
   resources :users, only: [:index, :create, :show, :destroy, :update]
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
+
   post "/signup", to: "users#create"
 
   get "/me", to: "users#show"

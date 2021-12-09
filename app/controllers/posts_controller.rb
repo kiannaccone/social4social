@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   
 #Create not completely working(?)
   def create
-      post = Post.create(post_params)
+      post = Post.create()
       render json: post, status: :created
   end
 
@@ -29,8 +29,8 @@ class PostsController < ApplicationController
 
 private
 
-  def post_params
-      params.permit(:content)
-  end
+  # def post_params
+  #     params.permit(:content)
+  # end
   
 end
