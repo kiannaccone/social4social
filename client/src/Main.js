@@ -14,8 +14,6 @@ function Main({user, setUser}) {
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
   const [search, setSearch] = useState("")
- 
-  
 
   useEffect(()=> { 
     fetch('/users')
@@ -40,7 +38,6 @@ function Main({user, setUser}) {
       users.username.toLowerCase().includes(search.toLowerCase())
     )
   })
-  
 
   return (
     <div>

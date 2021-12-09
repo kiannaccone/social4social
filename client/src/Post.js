@@ -1,19 +1,19 @@
 import { useState } from "react"
 
-
 function Post({currentUser, setUser, setAllPost}){
     const [postData, setPostData] = useState({
-        content: currentUser.content
+        content: currentUser.content,
+        user_id: currentUser.id,
+        like: 0
     });
+    console.log(currentUser)
 
     function handleChange(e) {
-        console.log(e.target.value)
         setPostData((currentPostData) => ({
             ...currentPostData,
             [e.target.name]: e.target.value,
         }))
     }
- 
 
     function handleSubmit(e){
         e.preventDefault()
@@ -26,15 +26,10 @@ function Post({currentUser, setUser, setAllPost}){
         .then(data => {
             setAllPost(current => [...current])
             setPostData({
-                content: ""
+                content: "",
             })
-            console.log("hello") 
-            setUser(data)
         })
     }
-    // post is working but once the post has been submitted you cannot type on that page unless the page has been refreshed so therefore state is not being updated??
-
-
 
     return(
         <form onSubmit={handleSubmit}>
@@ -43,7 +38,6 @@ function Post({currentUser, setUser, setAllPost}){
             </label>
             <button>Share Post</button>
         </form>
-
     )
 }
 
