@@ -9,7 +9,7 @@ function Login({onLogin}){
 
     function handleSubmit(e){
         e.preventDefault()
-       const registeredUser= {
+        const registeredUser= {
             username: user.username,
             password: user.password
         }
@@ -23,15 +23,12 @@ function Login({onLogin}){
         })
         .then((resp) => {
             if (resp.ok) {
-              resp.json().then((user) => onLogin(user));
+                resp.json().then((user) => onLogin(user));
             } else {
             //   resp.json().then((data) => setErrors(data.errors));
             }
         });
     }
-
-
-
 
     function handleChange(e){
         setUser((currentInfo)=> ({
@@ -40,7 +37,6 @@ function Login({onLogin}){
         }))
     }
 
-
     return(
         <div>
             <p>Have an account? Sign in!</p>
@@ -48,8 +44,8 @@ function Login({onLogin}){
                 <label>
                     <h4>Username</h4>
                     <input onChange={handleChange}
-                     value={user.username} type='text' placeholder='username'
-                     name="username"/>
+                        value={user.username} type='text' placeholder='username'
+                        name="username"/>
                 </label>
                 <label>
                     <h4>Password</h4>

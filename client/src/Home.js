@@ -1,6 +1,6 @@
 import PostContainer from './PostContainer'
 
-function Home({user, allPost}){
+function Home({allPost}){
 
     return(
         <div>

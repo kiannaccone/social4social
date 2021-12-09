@@ -54,19 +54,19 @@ function SignUp({onLogin}){
                 </label>
                 <label>
                     <h4>Username</h4>
-                     <input onChange={handleChange} name='username' type='text' value={createInfo.username} placeholder='username'/>
+                    <input onChange={handleChange} name='username' type='text' value={createInfo.username} placeholder='username'/>
                 </label>
                 <label>
                     <h4>Password</h4>
-                      <input onChange={handleChange} name='password' type='text' value={createInfo.password}    placeholder='password'/>
+                    <input onChange={handleChange} name='password' type='text' value={createInfo.password}    placeholder='password'/>
                 </label>
                 <label>
                     <h4>Bio</h4>
-                      <input onChange={handleChange} name='bio' type='text' value={createInfo.bio}  placeholder='bio'/>
+                    <input onChange={handleChange} name='bio' type='text' value={createInfo.bio}  placeholder='bio'/>
                 </label>
                 <label>
                     <h4>Image</h4>
-                      <input onChange={handleChange} name='image' type='text' value={createInfo.image} placeholder='image'/>
+                    <input onChange={handleChange} name='image' type='text' value={createInfo.image} placeholder='image'/>
                 </label>
                 <button>SignUp</button>
             </form>

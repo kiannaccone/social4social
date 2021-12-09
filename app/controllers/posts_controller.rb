@@ -9,9 +9,8 @@ class PostsController < ApplicationController
       render json: post, status: :ok
   end
   
-#Create not completely working(?)
   def create
-      post = Post.create()
+      post = Post.create!(post_params)
       render json: post, status: :created
   end
 
@@ -29,8 +28,8 @@ class PostsController < ApplicationController
 
 private
 
-  # def post_params
-  #     params.permit(:content)
-  # end
+  def post_params
+      params.permit(:content, :user_id, :like)
+  end
   
 end

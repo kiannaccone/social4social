@@ -3,7 +3,6 @@ function UserCard({allFollows, setAllFollows, loggedInUser, user : {id, image, u
 
     console.log(loggedInUser)
 
-
     function handleFollow () {
         const newFollow = {
             follower_id: loggedInUser.id,
@@ -46,8 +45,6 @@ function UserCard({allFollows, setAllFollows, loggedInUser, user : {id, image, u
         //     setAllFollows((allFollows) => [newFollow,...allFollows])
 
         // console.log(handleFollow)
-
-    
 
     return(
         <div>
