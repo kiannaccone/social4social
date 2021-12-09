@@ -5,7 +5,7 @@ function PostCard({post: {content, like, user_id, user}, currentUser}){
         <div id="postcard">
             <p>{content}</p>
             <p>{like} Likes</p>
-            <p>{user.username}</p>
+            <p>Posted By: {user.username}</p>
         </div>
     )
 }
