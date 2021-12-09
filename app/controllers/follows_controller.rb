@@ -10,6 +10,12 @@ class FollowsController < ApplicationController
     render json: follow, status: :created
   end
 
+  def destroy 
+    no_mas = Follow.find_by(id: params[:id])
+    no_mas.destroy 
+    head :no_content
+  end
+
   private
 
   def follow_params

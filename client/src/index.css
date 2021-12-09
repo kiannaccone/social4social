@@ -28,3 +28,8 @@ code {
   justify-content: center;
   padding: 5rem;
 }
+
+#navbar{
+  display: flex;
+  justify-content: space-around;
+}

@@ -56,7 +56,7 @@ function Main({user, setUser}) {
         <Post allPost={allPost} currentUser={user} setUser={setUser} setAllPost = {setAllPost} />
       </Route>
       <Route exact path="/follows">
-        <FollowContainer allFollows={allFollows}/>
+        <FollowContainer allFollows={allFollows} setAllFollows={setAllFollows} setUser={setUser} user={user}/>
       </Route>
       <Route exact path="/search">
         <Search search={search} setSearch={setSearch} allUsers = {filterUsers} user={user} allFollows = {allFollows} setAllFollows= {setAllFollows}/>
