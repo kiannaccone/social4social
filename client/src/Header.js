@@ -11,8 +11,6 @@ function Header({user}){
         {/* <img src={user.image}/>  */}
     </div> 
     )
-   
-    
 
 }
 

@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
     <Header user={user}/>
-        <Main onLogout={setUser} user={user}/>
+        <Main setUser={setUser} user={user}/>
     </div>
   )
 }
