@@ -9,7 +9,7 @@ import LandingPage from './LandingPage';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function Main({onLogout, user}) {
+function Main({user, setUser}) {
   const [allUsers, setAllUsers] = useState([])
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
@@ -42,7 +42,7 @@ function Main({onLogout, user}) {
 
   return (
     <div>
-    <NavBar onLogout={onLogout}/>
+    <NavBar onLogout={setUser}/>
     <Switch>
       <Route exact path="/">
         <LandingPage setAllUsers={setAllUsers}/>
@@ -51,7 +51,7 @@ function Main({onLogout, user}) {
         <Home user={user} allPost={allPost}/>
       </Route>
       <Route exact path="/profile">
-        <Profile allUsers = {allUsers} user={user} allPost={allPost}/>
+        <Profile allUsers={allUsers} setUser={setUser} user={user} allPost={allPost} setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/post">
         <Post allPost={allPost} currentUser={user}/>
