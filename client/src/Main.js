@@ -14,6 +14,8 @@ function Main({user, setUser}) {
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
   const [search, setSearch] = useState("")
+ 
+  
 
   useEffect(()=> { 
     fetch('/users')
@@ -54,13 +56,13 @@ function Main({user, setUser}) {
         <Profile allUsers={allUsers} setUser={setUser} user={user} allPost={allPost} setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/post">
-        <Post allPost={allPost} currentUser={user}/>
+        <Post allPost={allPost} currentUser={user} setUser={setUser} setAllPost = {setAllPost} />
       </Route>
       <Route exact path="/follows">
         <FollowContainer allFollows={allFollows}/>
       </Route>
       <Route exact path="/search">
-        <Search search={search} setSearch={setSearch} allUsers = {filterUsers} user={user}/>
+        <Search search={search} setSearch={setSearch} allUsers = {filterUsers} user={user} allFollows = {allFollows} setAllFollows= {setAllFollows}/>
       </Route>
     </Switch>
     </div>
