@@ -14,7 +14,7 @@ function NavBar({onLogout}){
     }
 
     return(
-        <div>
+        <div id='navbar'>
             <NavLink to="/home">
                 Home
             </NavLink>
