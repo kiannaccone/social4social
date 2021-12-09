@@ -1,7 +1,6 @@
 
 function Header({user}){
     
-    
     return(
     <div id="header_div">
         <h1>Social4SocialPeople</h1> 
@@ -9,7 +8,6 @@ function Header({user}){
         {/* <img src={user.image}/>  */}
     </div> 
     )
-
 }
 
 export default Header;

@@ -1,4 +1,3 @@
-import {Route, Switch} from 'react-router-dom';
 import Header from './Header';
 import LandingPage from './LandingPage';
 import Main from './Main';
@@ -6,7 +5,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 function App() {
-
   const [user, setUser] = useState(null)
 
   useEffect(() => {
