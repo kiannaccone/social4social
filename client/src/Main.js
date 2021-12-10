@@ -9,11 +9,14 @@ import LandingPage from './LandingPage';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function Main({user, setUser}) {
+
+function Main({user, setUser }) {
+
   const [allUsers, setAllUsers] = useState([])
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
   const [search, setSearch] = useState("")
+  
 
   useEffect(()=> { 
     fetch('/users')
@@ -38,7 +41,7 @@ function Main({user, setUser}) {
       users.username.toLowerCase().includes(search.toLowerCase())
     )
   })
-
+  
   return (
     <div>
     <NavBar onLogout={setUser}/>
@@ -47,7 +50,7 @@ function Main({user, setUser}) {
         <LandingPage setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/home">
-        <Home user={user} allPost={allPost}/>
+        <Home user={user} allPost={allPost} />
       </Route>
       <Route exact path="/profile">
         <Profile allUsers={allUsers} setUser={setUser} user={user} allPost={allPost} setAllUsers={setAllUsers}/>
