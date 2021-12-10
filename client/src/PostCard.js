@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+
 function PostCard({post: {id, content, like, user_id, user}, currentUser}){
 
     const [likeCount, setLikeCount] = useState(like);
@@ -18,10 +19,10 @@ function PostCard({post: {id, content, like, user_id, user}, currentUser}){
             data])
         })
     }
-    // need to update key of like + 1
+
 
     return(
-        <div id="postcard">
+        <div className="allcards">
             <p>{content}</p>
             <button onClick = {handleLikes}>{likeCount} ❤️ Likes</button>
             <p>Posted By: {user.username}</p>

@@ -1,10 +1,23 @@
+*{
+  /* background-image: url("https://images.unsplash.com/photo-1559567951-34c59e05c08c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTg5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60"); */
+  font-family: 'Simonetta', cursive;
+  /* background: linear-gradient(#00B3E6, white, #ffd43f )  */
+  /* font-family: 'Kalam', cursive; */
+  /* background-color: navy, 100vh;
+  background-image: radial-gradient(red, yellow, green) */
+}
+
 body {
+  /* background-image: url("https://images.unsplash.com/photo-1559567951-34c59e05c08c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTg5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60");
+  min-height: 100vh; */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(#00B3E6, white, #ffd43f );
+  min-height: 100vh;
 }
 
 code {
@@ -12,24 +25,96 @@ code {
     monospace;
 }
 
+#header h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#header h2 {
+  display: flex;
+  justify-content: start;
+  padding-left: 2rem;
+}
+
+#header img {
+  display: flex;
+  justify-content: start;
+  border-radius: 50%;
+  padding-left: 2px;
+  width: 10em;
+}
+
 #header_div{
   display: flex;
   justify-content: center;
 }
 
-#postcard{
-  display: table-row;
-  justify-content: center;
+#navbar{
+  display: flex;
+  flex-direction: column;
+} 
+
+#profilepostcard{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  border: solid #00B3E6;
+  border-radius: 2rem;
+  margin: 10px;
   padding: 2rem;
 }
 
-#followcard{
-  display: table-row;
-  justify-content: center;
-  padding: 5rem;
+#profilepic{
+  border-radius: 50%;
 }
 
-#navbar{
+#postfield{
+  resize: both;
+  border: 2px solid #00B3E6;
+  overflow: auto;
+  width: 300px;
+}
+  
+.navlinks{
+  color: #2b2b2b;
+}
+  
+.navlinks:hover{
+  color: #ffd43f
+}
+
+.allbuttons{
+  background-color: white;
+  color: #2b2b2b;
+  width: 4rem;
+  border-radius: 10%;
+}
+
+.allbuttons:hover{
+  color: #ffd43f
+}
+
+.allcards{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  border: solid #00B3E6;
+  border-radius: 2rem;
+  margin: 10px;
+  padding: 2rem;
+}
+
+.allcards img {
+  display: flex;
+  justify-content: start;
+  padding-left: 2rem;
+  width: 15rem;
+  border-radius: 50%;
+}
+
+.landingpage{
   display: flex;
   justify-content: space-around;
+  padding: 5rem;
+  border: 10px, solid #00B3E6;
 }
