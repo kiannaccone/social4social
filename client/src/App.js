@@ -1,6 +1,7 @@
 import Header from './Header';
 import LandingPage from './LandingPage';
 import Main from './Main';
+import { useHistory } from "react-router-dom";
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -16,6 +17,7 @@ function App() {
   }, []);
 
   if (!user) return <LandingPage onLogin={setUser} />
+
 
 
   return (
