@@ -112,6 +112,14 @@ code {
   border-radius: 50%;
 }
 
+/* .allcards button{
+  display: flex;
+  justify-content: space-around;
+  width: 8rem;
+  padding-left: center;
+  border-radius: 5%;
+} */
+
 .landingpage{
   display: flex;
   justify-content: space-around;

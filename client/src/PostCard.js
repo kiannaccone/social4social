@@ -23,9 +23,11 @@ function PostCard({post: {id, content, like, user_id, user}, currentUser}){
 
     return(
         <div className="allcards">
-            <p>{content}</p>
-            <button onClick = {handleLikes}>{likeCount} ❤️ Likes</button>
-            <p>Posted By: {user.username}</p>
+            <div>
+                <p>{content}</p>
+                <button onClick = {handleLikes}>{likeCount} ❤️ Likes </button>
+                <p>Posted By: {user.username}</p>
+            </div>
         </div>
     )
 }

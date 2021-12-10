@@ -29,20 +29,6 @@ function PostContainer({allPost, user, currentUser}){
  
 }
 
-
 export default PostContainer;
 
- //original code
-// const postDataMapped = postData.map((post) => <PostCard key={post.id} post={post} user={currentUser}/>)
 
-// 
-
-
-//followed is an array of objects. allPost is an array of objects
-
-//we need to create an array of post elements from allPost where the ID of the USER of the POST === the ID of the followed USER
-
-
-//
-// followersID = user.followed.map((follow) => follow.id)
-// 
