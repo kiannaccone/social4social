@@ -2,6 +2,11 @@ import PostCard from "./PostCard";
 
 
 function PostContainer({allPost, user, currentUser}){
+    console.log(user.follow)
+    let followersIds = user.followed.map((follow) => follow.id)
+
+    // console.log(user.followed.forEach((follow) =>{ return follow.id})
+    console.log(followersIds)
 
     if ((user.followed.length > 0)) { 
         const postData = allPost.filter((post) => post.user.id === user.followed[0].id)
@@ -19,9 +24,17 @@ function PostContainer({allPost, user, currentUser}){
         </h1>
     )}
     
-    
+   
     
 }
 
 
 export default PostContainer;
+
+// 
+
+
+//followed is an array
+//we need the ID in each element of that array
+// followersID = user.followed.map((follow) => follow.id)
+// 
