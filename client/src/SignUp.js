@@ -35,6 +35,10 @@ function SignUp({onLogin}){
                     // resp.json().then((data) => setErrors(data.errors))
                 }
             })
+
+            function addFriend() {
+                
+            }
     }
 
     function handleChange(e){

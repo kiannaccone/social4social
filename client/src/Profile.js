@@ -1,12 +1,13 @@
 import ProfileCard from './ProfileCard';
-import PostContainer from './PostContainer'
+import ProfilePostContainer from './ProfilePostContainer'
 
 function Profile({user, allPost, setAllUsers, allUsers, setUser}){
 
     return(
         <div>
-            <ProfileCard user={user} setAllUsers={setAllUsers} allUsers={allUsers} setUser={setUser}/>
-            <PostContainer allPost={allPost}/>
+            <ProfileCard user={user} setAllUser={setAllUsers} allUsers={allUsers}/>
+            <ProfilePostContainer allPost={allPost} user={user}/>
+            
         </div>
     )
 }

@@ -24,7 +24,7 @@ function Post({currentUser, setUser, setAllPost}){
         })
         .then(resp => resp.json())
         .then(data => {
-            setAllPost(current => [...current])
+            setAllPost((current) => [data,...current])
             setPostData({
                 content: "",
             })

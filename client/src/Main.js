@@ -1,4 +1,4 @@
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import Profile from './Profile';
 import Post from './Post';
 import FollowContainer from './FollowContainer';
@@ -9,7 +9,7 @@ import LandingPage from './LandingPage';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function Main({user, setUser}) {
+function Main({user, setUser, onLogin}) {
   const [allUsers, setAllUsers] = useState([])
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
@@ -38,13 +38,13 @@ function Main({user, setUser}) {
       users.username.toLowerCase().includes(search.toLowerCase())
     )
   })
-
+  // {user ? <Redirect to="/home" /> : <LandingPage />}
   return (
     <div>
     <NavBar onLogout={setUser}/>
     <Switch>
       <Route exact path="/">
-        <LandingPage setAllUsers={setAllUsers}/>
+      {user ? <Redirect to="/home" /> : <LandingPage setAllUsers={setAllUsers} />}
       </Route>
       <Route exact path="/home">
         <Home user={user} allPost={allPost}/>

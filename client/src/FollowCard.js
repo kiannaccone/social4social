@@ -12,9 +12,7 @@ function FollowCard({setAllFollows, follow: {followed, id, setUser, user}}){
             setAllFollows((currentFollows) => {
                 return currentFollows.filter((follow) => follow.id !== id)
             })
-        //     console.log(resp)
-        //     // setUser()
-        // })
+        
     }
     
     return(
