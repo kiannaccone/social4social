@@ -26,10 +26,18 @@ class PostsController < ApplicationController
       head :no_content
   end
 
+  def increment_likes
+    post = Post.find_by(id: params[:id])
+    post.update!(like: post.like + 1)
+    render json: post
+  end
+
 private
 
   def post_params
       params.permit(:content, :user_id, :like)
   end
+
+  
   
 end
