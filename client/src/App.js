@@ -17,12 +17,14 @@ function App() {
 
   if (!user) return <LandingPage onLogin={setUser} />
 
+
   return (
     <div>
     <Header user={user}/>
-        <Main setUser={setUser} user={user}/>
+        <Main setUser={setUser} user={user} />
     </div>
   )
 }
 
 export default App;
+

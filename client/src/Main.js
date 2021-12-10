@@ -1,4 +1,4 @@
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Router } from 'react-router-dom';
 import Profile from './Profile';
 import Post from './Post';
 import FollowContainer from './FollowContainer';
@@ -9,11 +9,12 @@ import LandingPage from './LandingPage';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-function Main({user, setUser}) {
+function Main({user, setUser }) {
   const [allUsers, setAllUsers] = useState([])
   const [allPost, setAllPost] = useState([])
   const [allFollows, setAllFollows] =useState([])
   const [search, setSearch] = useState("")
+  // const [like, setLike] = useState(null)
 
   useEffect(()=> { 
     fetch('/users')
@@ -47,7 +48,7 @@ function Main({user, setUser}) {
         <LandingPage setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/home">
-        <Home user={user} allPost={allPost}/>
+        <Home user={user} allPost={allPost} />
       </Route>
       <Route exact path="/profile">
         <Profile allUsers={allUsers} setUser={setUser} user={user} allPost={allPost} setAllUsers={setAllUsers}/>
