@@ -21,7 +21,7 @@ function App() {
 
 
   return (
-    <div>
+    <div >
     <Header user={user}/>
         <Main setUser={setUser} user={user} />
     </div>

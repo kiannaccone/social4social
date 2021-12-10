@@ -11,9 +11,8 @@ function ProfileCard({user, user : {image, bio, username}, setAllUsers, allUsers
 //Comment line 12 back in when ready to style. Images are too big!
   return (
     <>
-    <img src={image} alt={username} />
+    <img id='profilepic' src={image} alt={username} />
     <h2> {username} </h2>
-    {/* <button>Follow</button> */} 
     <p>Bio: {bio}</p>
     <div className="bio-edit">
                 <button className="allbuttons" onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>

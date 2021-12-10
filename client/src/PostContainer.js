@@ -21,6 +21,8 @@ function PostContainer({allPost, user, currentUser}){
         <h1>
             Womp Womp 😢 You have no friends💔
             Go to Search to add some friends!
+            <img className="gif" src="https://c.tenor.com/vZExFLWGuOsAAAAM/panda-cry.gif"
+             alt="This will display an animated GIF"/>
         </h1>
     )}
     
