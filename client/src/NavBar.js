@@ -1,7 +1,12 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link, useHistory } from "react-router-dom"
+
 
 function NavBar({onLogout}){
+
+    const history = useHistory();
+   
+
 
     function handleLogOut(){
         fetch('/logout',{
@@ -10,6 +15,7 @@ function NavBar({onLogout}){
             if (resp.ok) {
                 onLogout(null)
             }
+            history.push("/home");
         })
     }
 
