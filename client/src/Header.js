@@ -2,11 +2,11 @@
 function Header({user}){
     
     return(
-    <div id="header_div">
+    <div id="header">
         <h1>Social4SocialPeople</h1> 
-        <h2>{user.username}</h2>
         <img src={user.image}/> 
-    </div> 
+        <h2>{user.username}</h2>
+        </div>
     )
 }
 

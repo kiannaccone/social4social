@@ -15,22 +15,22 @@ function NavBar({onLogout}){
 
     return(
         <div id='navbar'>
-            <NavLink to="/home">
+            <NavLink className='navlinks' to="/home">
                 Home
             </NavLink>
-            <NavLink to="/profile">
+            <NavLink className='navlinks' to="/profile">
                 Profile        
             </NavLink>
-            <NavLink to="/follows">
+            <NavLink className='navlinks' to="/follows">
                 Follows 
             </NavLink>
-            <NavLink to="/search">
+            <NavLink className='navlinks' to="/search">
                 Search
             </NavLink>
-            <NavLink to='/post'>
+            <NavLink className='navlinks' to='/post'>
                 Create Post
             </NavLink>
-            <button as={Link} to='/' onClick={handleLogOut}>
+            <button className="allbuttons" as={Link} to='/' onClick={handleLogOut}>
                 Logout
             </button>
         </div>

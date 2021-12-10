@@ -68,7 +68,7 @@ function SignUp({onLogin}){
                     <h4>Image</h4>
                     <input onChange={handleChange} name='image' type='text' value={createInfo.image} placeholder='image'/>
                 </label>
-                <button>SignUp</button>
+                <button className="allbuttons">SignUp</button>
             </form>
         </div>
     )
