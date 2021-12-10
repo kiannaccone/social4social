@@ -10,7 +10,7 @@ function PostContainer({allPost, user, currentUser}){
 
     if ((user.followed.length > 0)) { 
         const postData = allPost.filter((post) => post.user.id === user.followed[0].id)
-        const postDataMapped = postData.map((post) => <PostCard key={post.id} post={post} user={currentUser}/>)
+        const postDataMapped = postData.map((post) => <PostCard key={post.id} post={post} user={currentUser} />)
         return(
         <div>
             {postDataMapped}
