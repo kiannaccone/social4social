@@ -1,5 +1,5 @@
 
-function PostCard({post: {content, like, user_id, user}, currentUser}){
+function PostCard({post: {content, like, user_id, user}}){
 
     return(
         <div id="postcard">
