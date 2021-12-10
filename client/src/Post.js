@@ -34,9 +34,11 @@ function Post({currentUser, setUser, setAllPost}){
     return(
         <form onSubmit={handleSubmit}>
             <label>
-                <input onChange={handleChange} type='text' name='content' value={postData.content} placeholder='What on your mind?'/>
+                <textarea id='postfield' onChange={handleChange} type ='text' name='content' value={postData.content} placeholder='What on your mind?'/>
             </label>
-            <button>Share Post</button>
+            <div>
+                <button className="allbuttons">Share Post</button>
+            </div>
         </form>
     )
 }

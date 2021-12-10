@@ -35,7 +35,7 @@ function BioEdit({user, setAllUsers, allUsers, setUser, setWasClicked}){
             <label id="bio-edit">
                 Bio: <input name="bio" type="text" value={formData.bio} onChange={handleChange} placeholder="Update you sh*t" required></input>
             </label>
-            <button className='submit' type="submit">Save</button>
+            <button className="allbuttons" type="submit">Save</button>
         </form>
     )
 }

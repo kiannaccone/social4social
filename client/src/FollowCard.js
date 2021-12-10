@@ -14,11 +14,13 @@ function FollowCard({setAllFollows, wasClicked, follow: {followed, id, follower}
         
     }
     return(
-        <div id="followcard">
+        <div className="allcards">
             <h4>{followed.username}</h4>
             <img src={followed.image} alt={followed.username}/>
             <p>Bio: {followed.bio}</p>
+        <div>
             <button onClick={handleUnfollow}>Unfollow</button>
+        </div>
         </div>
     )
 

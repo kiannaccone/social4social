@@ -23,10 +23,12 @@ function UserCard({allFollows, setAllFollows, loggedInUser, user : {id, image, u
     }
 
     return(
-        <div>
+        <div className="allcards">
             <img src= {image} alt = {username} />
             <h4>{username}</h4>
-            <button onClick={handleFollow}>{potato.length === 0 ? "Follow" : "Following"}</button>
+            <div>
+            <button className="allbuttons" onClick={handleFollow}>{potato.length === 0 ? "Follow" : "Following"}</button>
+            </div>
         </div>
     )
 }
