@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Login from "./Login";
 
 function Post({currentUser, setUser, setAllPost}){
     const [postData, setPostData] = useState({
@@ -36,9 +37,21 @@ function Post({currentUser, setUser, setAllPost}){
             <label>
                 <input onChange={handleChange} type='text' name='content' value={postData.content} placeholder='What on your mind?'/>
             </label>
-            <button>Share Post</button>
+            <button className="allbuttons">Share Post</button>
         </form>
     )
 }
 
 export default Post;
+
+
+
+// we want too:
+
+// set a turnary expression that checks a new user Login
+// When a new user logs in and has no followers, there is a page that 
+// rendered that says "You have no followers yet."  
+
+// Once the user then follows someone - 
+// they show up on th Home feed 
+

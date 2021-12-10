@@ -14,9 +14,9 @@ function ProfileCard({user, user : {image, bio, username}, setAllUsers, allUsers
     <img src={image} alt={username} />
     <h2> {username} </h2>
     {/* <button>Follow</button> */} 
-    <p>{bio}</p>
+    <p>Bio: {bio}</p>
     <div className="bio-edit">
-                <button onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
+                <button className="allbuttons" onClick={handleClick}>{wasClicked?"Hide Form":"Edit"}</button>
             </div>
     <div>
       {wasClicked ? <BioEdit user={user} setAllUsers={setAllUsers} allUsers={allUsers} setWasClicked={setWasClicked} setUser={setUser}/> : null }
