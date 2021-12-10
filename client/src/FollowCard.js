@@ -1,5 +1,5 @@
 
-function FollowCard({setAllFollows, follow: {followed, id, setUser, user}}){
+function FollowCard({setAllFollows, wasClicked, follow: {followed, id, follower}}){
 
     // console.log(key)
 
@@ -8,22 +8,22 @@ function FollowCard({setAllFollows, follow: {followed, id, setUser, user}}){
             method: 'DELETE',
         })
         .then(() => console.log('bye'))
-        // .then((resp) => {
             setAllFollows((currentFollows) => {
                 return currentFollows.filter((follow) => follow.id !== id)
             })
         
     }
-    
     return(
         <div className="allcards">
             <h4>{followed.username}</h4>
             <img src={followed.image} alt={followed.username}/>
-            <div>
-            <button className="allbuttons" onClick={handleUnfollow}>Unfollow</button>
-            </div>
+            <p>Bio: {followed.bio}</p>
+        <div>
+            <button onClick={handleUnfollow}>Unfollow</button>
+        </div>
         </div>
     )
+
 }
 
 export default FollowCard;

@@ -1,13 +1,19 @@
 import FollowCard from "./FollowCard";
+import FollowerCard from "./FollowerCard"
+import { useState } from 'react';
 
 function FollowContainer({allFollows, setAllFollows, setUser, user}){
-
-    // console.log(allFollows)
-    let follows = allFollows.map((follow) => <FollowCard key={follow.id} follow={follow} setAllFollows={setAllFollows} setUser={setUser} user={user}/>)
+    const [wasClicked, setWasClicked] = useState(false)
+    function handleClick() {
+        setWasClicked(current => !current)
+    }
     
+    let follows = allFollows.map((follow) => <FollowCard key={follow.id} follow={follow} setAllFollows={setAllFollows} setUser={setUser} user={user}/>)
+    // let followers = allFollows.map((follow) => <FollowerCard key={follow.id} follow={follow}/>)
     return(
         <div>
-            {follows}
+            {wasClicked ?<button onClick={handleClick}>Following</button> : <button onClick={handleClick}>Following</button>}
+            {wasClicked ? <div> {follows}</div> : <div>{follows}</div>}
         </div>
     )
 }

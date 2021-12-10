@@ -2,20 +2,19 @@ import PostCard from "./PostCard";
 
 
 function PostContainer({allPost, user, currentUser}){
-    console.log(user.follow)
-    let followersIds = user.followed.map((follow) => follow.id)
-
-    // console.log(user.followed.forEach((follow) =>{ return follow.id})
-    console.log(followersIds)
 
     if ((user.followed.length > 0)) { 
-        const postData = allPost.filter((post) => post.user.id === user.followed[0].id)
-        const postDataMapped = postData.map((post) => <PostCard key={post.id} post={post} user={currentUser}/>)
+         let followersIds = user.followed.map((follow) => follow.id)
+
+        const postsFiltered = allPost.filter((post) => followersIds.includes(post.user.id))
+        
+        const followingPosts = postsFiltered.map((post) => <PostCard key={post.id} post={post} user={currentUser}/>)
+
         return(
         <div>
-            {postDataMapped}
+            {followingPosts}
         </div>
-    )
+        )
     } else {
         return ( 
         <h1>
@@ -25,18 +24,24 @@ function PostContainer({allPost, user, currentUser}){
              alt="This will display an animated GIF"/>
         </h1>
     )}
-    
-   
-    
+
+ 
 }
 
 
 export default PostContainer;
 
+ //original code
+// const postDataMapped = postData.map((post) => <PostCard key={post.id} post={post} user={currentUser}/>)
+
 // 
 
 
-//followed is an array
-//we need the ID in each element of that array
+//followed is an array of objects. allPost is an array of objects
+
+//we need to create an array of post elements from allPost where the ID of the USER of the POST === the ID of the followed USER
+
+
+//
 // followersID = user.followed.map((follow) => follow.id)
 // 

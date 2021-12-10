@@ -6,7 +6,7 @@ function Post({currentUser, setUser, setAllPost}){
         user_id: currentUser.id,
         like: 0
     });
-    console.log(currentUser)
+    
 
     function handleChange(e) {
         setPostData((currentPostData) => ({
