@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink, Link, useHistory } from "react-router-dom"
 
-
 function NavBar({onLogout}){
 
     const history = useHistory();
-   
-
 
     function handleLogOut(){
         fetch('/logout',{

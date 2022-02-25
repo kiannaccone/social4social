@@ -18,8 +18,6 @@ function App() {
 
   if (!user) return <LandingPage onLogin={setUser} />
 
-
-
   return (
     <div >
     <Header user={user}/>

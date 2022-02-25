@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   patch "/posts/:id/like", to: "posts#increment_likes"
 
-
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   
 end

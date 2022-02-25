@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def index
     comments = Comment.all 
     render json: comments
@@ -14,7 +15,6 @@ class CommentsController < ApplicationController
     comment = Comment.create(comment_params)
     render json: comment, status: :created
   end
-
 
   private
   

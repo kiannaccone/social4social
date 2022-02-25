@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function BioEdit({user, setAllUsers, allUsers, setUser, setWasClicked}){
+function BioEdit({user, setAllUsers, setUser, setWasClicked}){
     const [formData, setFormData] = useState({
         bio: user.bio
     })

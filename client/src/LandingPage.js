@@ -3,7 +3,7 @@ import Login from "./Login"
 import SignUp from "./SignUp"
 
 function LandingPage({onLogin}){
- 
+
     return(
 
         <div>

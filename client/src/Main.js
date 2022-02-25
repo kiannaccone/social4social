@@ -53,7 +53,7 @@ function Main({user, setUser }) {
         <Home user={user} allPost={allPost} />
       </Route>
       <Route exact path="/profile">
-        <Profile allUsers={allUsers} setUser={setUser} user={user} allPost={allPost} setAllUsers={setAllUsers}/>
+        <Profile setUser={setUser} user={user} allPost={allPost} setAllUsers={setAllUsers}/>
       </Route>
       <Route exact path="/post">
         <Post allPost={allPost} currentUser={user} setUser={setUser} setAllPost = {setAllPost} />

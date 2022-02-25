@@ -7,7 +7,7 @@ function PostCard({post: {id, content, like, user_id, user}, currentUser}){
 
     const incrementLike = () => setLikeCount(like + 1);
     
-   
+
     function handleLikes(e) {
         e.preventDefault()
         fetch(`/posts/${id}/like`, {
