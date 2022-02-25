@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {useHistory} from "react-router-dom"
 
 function Post({currentUser, setUser, setAllPost}){
     const [postData, setPostData] = useState({
@@ -6,6 +7,11 @@ function Post({currentUser, setUser, setAllPost}){
         user_id: currentUser.id,
         like: 0
     });
+
+    let history = useHistory()
+    const handleSubmitSharePost = (e) => {
+        history.push(`/home`)
+    };
     
 
     function handleChange(e) {
@@ -28,6 +34,7 @@ function Post({currentUser, setUser, setAllPost}){
             setPostData({
                 content: "",
             })
+            handleSubmitSharePost()
         })
     }
 
