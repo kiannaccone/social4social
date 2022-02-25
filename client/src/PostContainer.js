@@ -5,7 +5,7 @@ function PostContainer({allPost, user, currentUser}){
 
     if ((user.followed.length > 0)) { 
 
-         let followersIds = user.followed.map((follow) => follow.id)
+        let followersIds = user.followed.map((follow) => follow.id)
 
         const postsFiltered = allPost.filter((post) => followersIds.includes(post.user.id))
         
