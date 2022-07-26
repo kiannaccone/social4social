@@ -46,9 +46,10 @@ function Main({user, setUser }) {
     <div>
     <NavBar onLogout={setUser}/>
     <Switch>
-      <Route exact path="/">
+      {/* Didn't need to include code below. Displayed login and signup after user signed up or logged in  */}
+      {/* <Route exact path="/">
         <LandingPage setAllUsers={setAllUsers}/>
-      </Route>
+      </Route> */}
       <Route exact path="/home">
         <Home user={user} allPost={allPost} />
       </Route>
